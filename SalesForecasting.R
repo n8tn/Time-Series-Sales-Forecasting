@@ -39,7 +39,6 @@ adf.test(diff(diff(log(Sales[,3]))), alternative = "stationary") #ppv
 ARIMAautofit <- auto.arima(log(Sales[,1]), d = 2, xreg = log(Sales[,3])) 
 summary(ARIMAautofit)
 
-## 1% increase in Rainbow PPV => 2.2% decrease in Rainbow Sales 
 
 #Forecast
 ppv <- log(rep.int(2.03, 5))
@@ -62,16 +61,6 @@ cov = Salesx[,c(1,3,4)]
 
 ARIMAautofitxreg <- auto.arima(log(Salesx[,2]), d = 1, xreg = log(cov))
 summary(ARIMAautofitxreg)                          
-
-## 10% increase in Carnation Qty => 0.18% fall in Rainbow Sales 
-## 10% increase in Rainbow PPV => 4.8% fall in Rainbow Sales 
-## 10% increase in Carnation PPV => 3.8% fall in Rainbow Sales 
-
-
-
-
-#RainbowCarnation$l <- lag(RainbowCarnation$rainbow_sales, n=1)
-#plot(RainbowCarnation$rainbow_qty, RainbowCarnation$l, xlab = "Sales Quantity", ylab = "Total Sales Value")
 
 ##################################################################################
 ######################## Summary Stats 
