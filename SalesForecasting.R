@@ -52,7 +52,6 @@ Forecast <- as.numeric(fc$mean)
 Date <- rownames(as.data.frame(fc))
 Forecasts <- data.frame(Date, Forecast)
 
-deployApp()
 #################################################################################
 #################################################################################
 ##############              Model with All Covariates             ###############
